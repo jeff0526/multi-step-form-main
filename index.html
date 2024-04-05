@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_responsive.css">
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
+</head>
+<body>
+
+
+<main>
+    <!-- Sidebar start -->
+  <div class="container">
+    
+      
+      <div class="step-con">
+        <div class="stp1" >
+          <div class="num1 active" >
+            <p>1</p>
+          </div>
+          <div id="menu-btn">
+            <p class="stp">Step 1</p>
+            <span>Your info</span>
+          </div>
+        </div>
+        <div class="stp1">
+          <div class="num1" >
+            <p>2</p>
+          </div>
+          <div id="menu-btn">
+            <p class="stp">Step 2</p>
+            <span>Select plan</span>
+          </div>
+        </div>
+        <div  class="stp1">
+          <div class="num1">
+            <p>3</p>
+          </div>
+          <div id="menu-btn">
+            <p class="stp">Step 3</p>
+            <span> Add-ons</span>
+          </div>
+        </div>
+        <div onclick="opentab(event,'tab4')" class="stp1" >
+          <div class="num1">
+            <p>4</p>
+          </div>
+          <div id="menu-btn">
+            <p class="stp">Step 4</p>
+            <span>Summary</span>
+          </div>
+        </div>
+      </div>
+    
+    <!-- Sidebar end -->
+    <div class="tabs-con">
+
+      <!-- first tab -->
+      <div id="tab1" class="tab-con">
+        <div class="con1">
+          <div class="stp1-ttl">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
+          <div class="stp1-filup">
+            <label for="namep">Name<span class="err">This field is required</span></label>
+            <input type="text" name="name-person" id="namep" class="fil" placeholder="e.g. Stephen King">
+          
+            <label for="emailp">Email Address<span class="err">This field is required</span></label>
+            <input type="email" name="name-person" id="emailp" class="fil" placeholder="e.g. stephenking@lorem.com">
+          
+            <label for="nump">Phone Number<span class="err">This field is required</span></label>
+            <input type="number" name="name-person" id="nump" class="fil" placeholder="e.g. +1 234 567 890">
+           </div>
+            
+        </div>
+        <div class="conbtn">
+          <button type="submit" onclick="opentab(event,'tab2')">Next Step</button>
+        </div>
+      </div>
+
+      <!-- second tab -->
+      <div id="tab2" class="tab-con">
+        <div class="con1">
+        <div class="stp1-ttl">
+         <h1>Select your plan</h1>
+         <p>You have the option of monthly or yearly billing.</p>
+        </div>
+         <div class="plan-con">
+            <div class="plans" onclick="plnpck(event,'arc')">
+              <img src="assets/images/icon-arcade.svg" alt="">
+              <div class="plan-ttl">
+                <p>Arcade</p>
+                <span>$<span class="plnprc">9</span>/<span class="m-y">mo</span></span>
+                <p class="yrfree">2 months free</p>
+              </div>
+            </div>
+            <div class="plans" onclick="plnpck(event,'adv')">
+              <img src="assets/images/icon-advanced.svg" alt="">
+              <div class="plan-ttl">
+                <p>Advanced</p>
+                <span>$<span class="plnprc">12</span>/<span class="m-y">mo</span></span>
+                <p class="yrfree">2 months free</p>
+              </div>
+            </div>
+            <div class="plans" onclick="plnpck(event,'pro')">
+              <img src="assets/images/icon-pro.svg" alt="">
+              <div class="plan-ttl">
+                <p>Pro</p>
+                <span>$<span class="plnprc">15</span>/<span class="m-y">mo</span></span>
+                <p class="yrfree">2 months free</p>
+              </div>
+            </div>
+          
+          </div>
+
+          <div class="mon-year">
+            
+              <p id="m">Monthly</p>
+              <label class="switch">
+                <input type="checkbox" id="monyrchk">
+                <span class="slider round"></span>
+              </label>
+               <p id="y">Yearly</p>
+            
+          </div>
+        </div>
+        
+        <div class="gb-conbtn">
+          <p class="gbtn"  onclick="opentab(event,'tab1')" id="defopen">Go Back</p>
+          <button type="submit" onclick="opentab(event,'tab3')">Next Step</button>
+        </div>
+      </div>
+  <!-- third tab -->
+      <div id="tab3" class="tab-con">
+        <div class="con1">
+          <div class="stp1-ttl">
+           <h1>Pick add-ons</h1>
+           <p>Add-ons help enhance your gaming experience.</p>
+          </div>
+          <div class="ads-con">
+            
+            <div class="ads">
+              <div class="flex-con">
+                <img src="assets/images/icon-checkmark.svg" alt="" class="chkbtn">
+                <div class="ads-ttl">
+                  <p>Online service</p>
+                  <span>Access to multiplayer games</span>
+                </div>
+              </div>
+                <p>+$<span class="plnprc ads-prc">1</span>/<span class="m-y">mo</span></p>
+            </div>
+
+            <div class="ads">
+              <div class="flex-con">
+                <img src="assets/images/icon-checkmark.svg" alt="" class="chkbtn">
+                <div class="ads-ttl">
+                  <p>Large storage</p>
+                  <span>Extra 1TB of cloud save</span>
+                </div>
+              </div>
+                <p>+$<span class="plnprc ads-prc">2</span>/<span class="m-y">mo</span></p>
+            </div>
+
+            <div class="ads">
+              <div class="flex-con">
+                <img src="assets/images/icon-checkmark.svg" alt="" class="chkbtn">
+                <div class="ads-ttl">
+                  <p>Customizable Profile</p>
+                  <span>Custom theme on your profile</span>
+                </div>
+              </div>
+                <p>+$<span class="plnprc ads-prc">2</span>/<span class="m-y">mo</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="gb-conbtn">
+          <p class="gbtn" onclick="opentab(event,'tab2')">Go Back</p>
+          <button type="submit" onclick="opentab(event,'tab4')">Next Step</button>
+        </div>
+      </div>
+
+   <!-- last tab -->
+      <div id="tab4" class="tab-con">
+        <div class="con1">
+          <div class="stp1-ttl">
+           <h1>Finishing up</h1>
+           <p>Double-check everything looks OK before confirming.</p>
+          </div>
+          <div class="fnl-con">
+            
+            <div class="fns">
+              <div id="ff" class="plan-sl">
+                <p><span  id="slctdpln"></span> (<span class="mory">Monthly</span>)</p>
+                  <span id="dd" onclick="opentab(event,'tab2')">Change</span>
+              </div>
+                <p>+$<span id="slctdplanprc"></span>/<span id="yr-mn">mo</span></p>
+            </div>
+            <div class="fns1">
+
+              <div class="adsonprc">
+                 <p class="dynapck">Online service</p>
+                 <p class="dynaprc">+$<span class="plnprc activeadson"></span>/<span class="m-y">mo</span></p>
+              </div> 
+              <div class="adsonprc">
+                <p class="dynapck">Large storage</p>
+                <p class="dynaprc">+$<span class="plnprc activeadson"></span>/<span class="m-y">mo</span></p>
+              </div>
+              <div class="adsonprc">
+                <p class="dynapck">Customizable Profile</p>
+                <p class="dynaprc">+$<span class="plnprc activeadson"></span>/<span class="m-y">mo</span></p>
+              </div>
+           
+            </div>
+           </div>
+          <div class="fnl-ttl">
+            <div class="ttl-sl">
+                <p>Total (<span class="mory">per month</span>)</p>
+                
+            </div>
+              <p id="ttlprice">+$<span id="totalprc">2</span>/<span id="ttlmy">mo</span></p>
+          </div>
+        </div>
+        <div class="gb-conbtn">
+          <p class="gbtn" onclick="opentab(event,'tab3')">Go Back</p>
+          <button id="confbtn" type="submit" onclick="opentab(event,'tab5')">Confirm</button>
+        </div>
+      </div>
+
+ <!-- thank you tab -->
+      <div id="tab5" class="tab-con">
+       <div class="fcon">
+          <img src="assets/images/icon-thank-you.svg" alt="">
+         <div class="ty-ttl">
+          <h1>Thank you!</h1>
+          <p>Thanks for confirming your subscription! We hope you have fun 
+            using our platform. If you ever need support, please feel free 
+            to email us at support@loremgaming.com.</p>
+         </div>
+        </div>
+      <div>
+
+  </div>
+  
+</main>
+
+  <!-- 
+
+   --> 
+
+  <!-- Step 5 end -->
+  <script src="script.js"></script>
+</body>
+</html>
